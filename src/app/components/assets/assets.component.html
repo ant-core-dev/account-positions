@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+      <p (click)="onSortByField('cash_available')" class="float-right sortable">
+        Available Cash
+      </p>
+      <div (click)="onSortByField('account_number')" class="sortable">Account</div>
+    </div>
+
+    <ul class="asset-list">
+        <li *ngFor="let asset of assets | slice:0:display_max" class="asset-item">
+            <span class="asset-title">{{asset.name}} - {{asset.account_number}}</span>
+            <span class="asset">{{asset.cash_available | currency}}</span>
+            <div [ngClass]="setClasses(asset)">{{asset.percent_change | number}}% / {{asset.dollar_change | currency}} </div>
+        </li>
+
+        <li *ngIf="display_max < assets.length">
+            <button class="btn btn-primary" (click)="getAssets()">Load More</button>
+        </li>
+    </ul>
+    
+</div>

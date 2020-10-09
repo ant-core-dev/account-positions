@@ -1,0 +1,28 @@
+.asset-list {
+    list-style-type: none;
+}
+
+* {
+    padding: 8px 16px;
+}
+
+.asset-title {
+    color: blue;
+    font-weight: 800;
+}
+
+.asset-item {
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.sortable {
+    cursor: pointer;
+}
+
+.increase {
+    color: green;
+}
+
+.decrease {
+    color: red;
+}
