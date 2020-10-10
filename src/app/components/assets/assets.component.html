@@ -1,9 +1,19 @@
 <div class="card">
     <div class="card-header">
-      <p (click)="onSortByField('cash_available')" class="float-right sortable">
+      <div (click)="onSortByField('cash_available')" class="float-right sortable">
+        <span *ngIf="lastSortedByField==='cash_available'" class="sort-direction">
+          <span *ngIf="ascendingOrder">&#708;</span>
+          <span *ngIf="!ascendingOrder">&#709;</span>
+        </span>
         Available Cash
-      </p>
-      <div (click)="onSortByField('account_number')" class="sortable">Account</div>
+      </div>
+      <div (click)="onSortByField('account_number')" class="sortable">
+        <span *ngIf="lastSortedByField==='account_number'" class="sort-direction">
+          <span *ngIf="ascendingOrder">&#708;</span>
+          <span *ngIf="!ascendingOrder">&#709;</span>
+        </span>
+          Account
+      </div>
     </div>
 
     <ul class="asset-list">
@@ -13,8 +23,8 @@
             <div [ngClass]="setClasses(asset)">{{asset.percent_change | number}}% / {{asset.dollar_change | currency}} </div>
         </li>
 
-        <li *ngIf="display_max < assets.length">
-            <button class="btn btn-primary" (click)="getAssets()">Load More</button>
+        <li *ngIf="display_max < assets.length" class="text-center">
+            <button class="btn btn-outline-primary rounded-0" (click)="getAssets()">Load More</button>
         </li>
     </ul>
     
