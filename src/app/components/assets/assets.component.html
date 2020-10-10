@@ -8,22 +8,24 @@
         Available Cash
       </div>
       <div (click)="onSortByField('account_number')" class="sortable">
-        <span *ngIf="lastSortedByField==='account_number'" class="sort-direction">
-          <span *ngIf="ascendingOrder">&#708;</span>
-          <span *ngIf="!ascendingOrder">&#709;</span>
-        </span>
           Account
+          <span *ngIf="lastSortedByField==='account_number'" class="sort-direction">
+            <span *ngIf="ascendingOrder">&#708;</span>
+            <span *ngIf="!ascendingOrder">&#709;</span>
+          </span>
       </div>
     </div>
 
-    <ul class="asset-list">
-        <li *ngFor="let asset of assets | slice:0:display_max" class="asset-item">
-            <span class="asset-title">{{asset.name}} - {{asset.account_number}}</span>
-            <span class="asset">{{asset.cash_available | currency}}</span>
-            <div [ngClass]="setClasses(asset)">{{asset.percent_change | number}}% / {{asset.dollar_change | currency}} </div>
+    <ul class="list-group">
+        <li *ngFor="let asset of assets | slice:0:display_max" class="list-group-item">
+            <div class="row">
+              <div class="asset-title">{{asset.name}} - {{asset.account_number}}</div>
+              <div class="asset ml-auto">{{asset.cash_available | currency}}</div>
+            </div>
+            <div [ngClass]="setClasses(asset)">{{asset.percent_change | number}}% / {{Math.abs(asset.dollar_change) | currency}} </div>
         </li>
 
-        <li *ngIf="display_max < assets.length" class="text-center">
+        <li *ngIf="display_max < assets.length" class="list-group-item text-center">
             <button class="btn btn-outline-primary rounded-0" (click)="getAssets()">Load More</button>
         </li>
     </ul>

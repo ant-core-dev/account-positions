@@ -9,6 +9,7 @@ import { Asset } from '../../models/Asset';
   styleUrls: ['./assets.component.css']
 })
 export class AssetsComponent implements OnInit {
+  Math=Math;
   assets:Asset[];
   display_max:number;
   lastSortedByField:string;
@@ -58,6 +59,8 @@ export class AssetsComponent implements OnInit {
 
   setClasses(asset:Asset) {
     let classes = {
+      'asset-change': true,
+      'float-right': true,
       'increase': asset.dollar_change>0,
       'decrease': asset.dollar_change<0
     }
