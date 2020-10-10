@@ -62,7 +62,8 @@ export class AssetsComponent implements OnInit {
       'asset-change': true,
       'ml-auto': true,
       'increase': asset.dollar_change>0,
-      'decrease': asset.dollar_change<0
+      'decrease': asset.dollar_change<0,
+      'text-secondary': asset.dollar_change==0
     }
 
     return classes;

@@ -32,7 +32,7 @@
             </div>
             <div class="row">
               <div>&nbsp;</div>
-              <div [ngClass]="setClasses(asset)">{{asset.percent_change | number}}% / {{Math.abs(asset.dollar_change) | currency}} </div>
+              <div [ngClass]="setClasses(asset)">{{asset.percent_change | number:'1.1-5'}}% / {{Math.abs(asset.dollar_change) | currency}} </div>
             </div>
         </li>
 
