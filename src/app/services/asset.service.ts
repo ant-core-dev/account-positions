@@ -29,9 +29,9 @@ export class AssetService {
         id: 3,
         account_number: '5200',
         name: 'IRA',
-        cash_available: 5000,
-        dollar_change: 4000,
-        percent_change: 0.21
+        cash_available: 5763.36,
+        dollar_change: -8916.69,
+        percent_change: 0.08
       },
       {
         id: 4,
