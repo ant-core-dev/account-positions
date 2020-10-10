@@ -1,9 +1,14 @@
+.card-header {
+    font-size: 13px;
+    font-weight: 600;
+}
+
 .asset-list {
     list-style-type: none;
 }
 
 .asset-title {
-    color: blue;
+    color: #007bff;
     font-weight: 800;
 }
 
@@ -12,7 +17,7 @@
 }
 
 .sort-direction {
-    color: blue;
+    color: #007bff;
 }
 
 .asset-change {
