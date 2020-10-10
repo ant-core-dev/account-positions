@@ -2,14 +2,27 @@
 
 List of Asset Positions by account featuring infinite scroll and sorting by account.
 
-## Development server
+# Quick Start 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Install server dependencies
 
-## Author
+```bash
+npm install
+```
+### Run Dev Server from root
+
+```bash
+ng serve
+```
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## App Info
+
+### Author
 
 Anthony Ranallo
 
-## License
+### License
 
 This project is licensed under the MIT License
