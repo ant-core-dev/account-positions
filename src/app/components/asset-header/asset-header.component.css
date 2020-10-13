@@ -1,0 +1,13 @@
+.card-header {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.sortable {
+    cursor: pointer;
+}
+
+.sort-direction {
+    color: #007bff;
+}

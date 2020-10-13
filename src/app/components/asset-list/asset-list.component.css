@@ -1,0 +1,28 @@
+.asset-list {
+    list-style-type: none;
+}
+
+.asset-title {
+    color: #007bff;
+    font-weight: 800;
+}
+
+.asset-change {
+    font-size: 13px;
+}
+
+.increase {
+    color: green;
+}
+
+.increase:before {
+    content: '+';
+}
+
+.decrease {
+    color: red;
+}
+
+.decrease:before {
+    content: '-';
+}

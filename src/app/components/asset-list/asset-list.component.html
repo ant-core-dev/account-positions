@@ -1,0 +1,16 @@
+<ul class="list-group">
+    <li *ngFor="let asset of assets | slice:0:display_max" class="list-group-item">
+        <div class="row">
+          <div class="asset-title">{{asset.name}} - {{asset.account_number}}</div>
+          <div class="asset ml-auto">{{asset.cash_available | currency}}</div>
+        </div>
+        <div class="row">
+          <div>&nbsp;</div>
+          <div [ngClass]="setClasses(asset)">{{asset.percent_change | number:'1.1-5'}}% / {{Math.abs(asset.dollar_change) | currency}} </div>
+        </div>
+    </li>
+
+  <li *ngIf="display_max < assets.length" class="list-group-item text-center">
+        <button class="btn btn-outline-primary rounded-0" (click)="handleLoadMore()">Load More</button>
+  </li> 
+</ul>

@@ -9,9 +9,7 @@ import { Asset } from '../../models/Asset';
   styleUrls: ['./assets.component.css']
 })
 export class AssetsComponent implements OnInit {
-  Math=Math;
   assets:Asset[];
-  display_max:number;
   lastSortedByField:string;
   ascendingOrder:boolean;
 
@@ -20,12 +18,7 @@ export class AssetsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.display_max = 3;
     this.assets = this.assetService.getAssets();
-  }
-
-  getAssets() {
-    this.display_max += 3;
   }
 
   onSortByField(field:string) {
@@ -57,15 +50,4 @@ export class AssetsComponent implements OnInit {
 
   }
 
-  setClasses(asset:Asset) {
-    let classes = {
-      'asset-change': true,
-      'ml-auto': true,
-      'increase': asset.dollar_change>0,
-      'decrease': asset.dollar_change<0,
-      'text-secondary': asset.dollar_change==0
-    }
-
-    return classes;
-  }
 }

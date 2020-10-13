@@ -1,0 +1,24 @@
+<div class="card-header">
+    <div class="row">
+      <div>&nbsp;</div>
+      <div (click)="handleOnSortByField('cash_available')" class="sortable ml-auto">
+        <span *ngIf="lastSortedByField==='cash_available'" class="sort-direction">
+          <span *ngIf="ascendingOrder">&#708;</span>
+          <span *ngIf="!ascendingOrder">&#709;</span>
+        </span>
+        Available Cash
+      </div>
+    </div>
+    <div class="row">
+      <div (click)="handleOnSortByField('account_number')" class="sortable">
+        Account
+        <span *ngIf="lastSortedByField==='account_number'" class="sort-direction">
+          <span *ngIf="ascendingOrder">&#708;</span>
+          <span *ngIf="!ascendingOrder">&#709;</span>
+        </span>
+      </div>
+      <div class="ml-auto text-secondary">
+        Today's Change
+      </div>
+    </div>
+  </div>
